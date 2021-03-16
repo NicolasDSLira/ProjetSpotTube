@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+
+
+
+        <meta charset="UTF-8"/>
+
+        <title>Esqueci minha senha</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+
+        <script type="text/javascript">
+        
+            function ok(){
+
+            var email = esquece.email.value
+
+            var data = esquece.data.value
+
+            if (email == "" || email.indexOf('@') == -1 ){
+					    alert('Confira se foi adicionado @ ou o E-mail é válido');
+                        esquece.email.focus();
+                        return false;
+                    }
+
+            if (data == "") {
+                        alert('Coloque sua data de nascimento');
+                        esquece.data.focus();
+                        return false;
+                    
+                     }
+
+            }
+
+
+        </script>
+
+    </head>
+
+    <body id="criar">
+
+        <div id="criar_top">
+
+            <img src="../img/log.png">
+
+            <h1>SpotTube</h1>
+        
+            <h2>Recupere sua conta e tenha acesso total a nosso conteúdo</h2>
+
+        </div>
+
+        <fieldset>
+            <legend>Esqueci minha senha</legend>
+            <form name="esquece" action="home.html">
+
+                     
+                <input type="email" id="email" name="email" placeholder="Escreva seu Emal aqui">
+
+                <br>
+
+                <p>Coloque sua data de nascimento</p>
+
+                <input type="date" id="data" name="data" >
+
+                    <br>
+
+                <p>Uma mensagem foi enviada para seu E-mail, confirme para redefinir sua senha</p>
+
+                    <br>
+
+                    <input type="submit" id="butao" onclick="return ok()">
+              
+            </form>
+        </fieldset>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+       
+
+    </body>
+
+</html>

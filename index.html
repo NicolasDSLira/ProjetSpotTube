@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+
+            <title>Login</title>
+            
+            <meta charset="UTF-8"/>
+
+            <link rel="stylesheet" type="text/css" href="css/estilo.css">
+
+            <script type="text/javascript">
+
+                function validar() {
+
+                    var email = formuser.email.value;
+
+					var senha = formuser.senha.value;
+
+                  
+				if(email == "" || email.indexOf('@') == -1 ){
+					alert('Confira se foi adicionado @ ou o E-mail é válido');
+					formuser.email.focus();
+					return false;
+				}
+				
+				if(senha == "" || senha.length <= 7){
+					alert('Preencha o campo senha com minimo 8 caracteres');
+					formuser.senha.focus();
+					return false;
+				}                   
+                    
+                    
+
+                }
+            </script>
+
+        </head>
+            <body id="login">
+
+                <div id="criar_top">
+
+                    <img src="img/log.png">
+    
+                    <h1>SpotTube</h1>
+                
+                    <h2>Entre na sua conta e tenha acesso total a nosso conteúdo</h2>
+    
+                </div>
+
+                <center>
+
+                    <form name="formuser" action="php/test.php"  method="POST">
+                
+                        <fieldset id="center">
+                   
+                            <legend>Acessar sua conta SpotTube</legend>
+
+                         <label>E-Mail:</label><input type="email" placeholder="Digite seu E-Mail" name="email" id="email">
+
+                            <br>
+
+                            <br>
+
+                        <label>Senha:</label><input type="password" placeholder="Digite a senha" name="senha" id="senha">
+                             <br>
+
+                            <br>
+
+			<input type="submit" id="butao" onclick="return validar()">
+
+                       
+                    
+                        <p><a href="paginas/Esqueci.html">Esqueci minha senha</a></p>
+                        <p><a href="paginas/cria_conta.html">Criar uma conta</a></p> 
+                        
+                </fieldset>
+            </form>
+                </center>
+            </body>
+    </html>

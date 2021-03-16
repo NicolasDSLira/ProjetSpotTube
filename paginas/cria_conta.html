@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8"/>
+            <link rel="stylesheet" type="text/css" href="../css/estilo.css">
+            <title>Criar</title>
+
+            <script type="text/javascript">
+
+                function validar() {
+                    
+                    var nome = criar1.nome.value;
+
+                    var sobrenome = criar1.sobrenome.value;
+
+                    var email = criar1.email.value;
+
+                    var data = criar1.data.value;
+
+                    var sexo = criar1.sexo.value;
+
+                    var termo = criar1.termo.value;
+
+                    var senha = criar1.senha.value;
+
+                    var confirma = criar1.confirma.value;
+
+                    if (nome == "") {
+
+                        alert('Digite seu nome');
+                        criar1.nome.focus();
+                        return false;
+                    }
+
+                    if (sobrenome == "") {
+
+                        alert('Digite seu Sobrenome');
+                        criar1.sobrenome.focus();
+                        return false;
+                    }
+
+                    if (email == "" || email.indexOf('@') == -1 ){
+					    alert('Confira se foi adicionado @ ou o E-mail é válido');
+                        criar1.email.focus();
+                        return false;
+                    }
+
+                    if (data == "") {
+                        alert('Coloque sua data de nascimento');
+                        criar1.data.focus();
+                        return false;
+                    
+                    }
+
+                    if (sexo == "") {
+
+                        alert('Escolha um genero');
+                        return false;
+                        
+                    }
+
+                    if (termo == "") {
+
+                        alert('Termos e condições não aceito');
+                        return false;
+
+                    }
+
+                    if(senha == "" || senha.length <= 7){
+				    	alert('Preencha o campo senha com minimo 8 caracteres');
+					    criar1.senha.focus();
+					    return false;
+                }       
+                
+                if(confirma != senha){
+                    alert('senhas não são iguais');
+                    criar1.confirma.focus();
+                    return false
+                }
+
+
+
+
+
+                    
+
+                }
+
+            </script>
+
+
+
+
+        </head>
+
+        <body id="criar">
+
+
+            <div id="criar_top">
+
+                <img src="../img/log.png">
+
+                <h1>SpotTube</h1>
+            
+                <h2>Crie sua conta e tenha acesso total a nosso conteúdo</h2>
+
+            </div>
+
+            <fieldset>
+
+                <legend>Criar sua conta SpotTube</legend>
+
+                <form action="../index.html" name="criar1" method="POST">
+
+                <input type="text" id="nome" name="nome" placeholder="Nome">
+
+                <input type="text" id="sobrenome" name="sobrenome" placeholder="Sobrenome">
+
+                    <br>
+                    <br>
+
+                <input type="email" id="email" name="email" placeholder="Escreva seu Emal aqui">
+
+                    <br>
+
+                    <p>Coloque sua data de nascimento</p>
+
+                <input type="date" id="data" name="data" >
+
+                    <br>
+
+                    <p>Escolha seu gênero</p>
+
+                <input type="radio" name="sexo" id="sexo" value="masculino"><label>Masculino</label>
+
+                <input type="radio" name="sexo" id="sexo" value="feminino"><label>Feminino</label>
+
+                <input type="radio" name="sexo" id="sexo" value="ND"><label>Prefiro não falar</label>
+
+                    <br>
+
+                    <br>
+
+                <input type="password" name="senha" id="senha" placeholder="Faça uma senha">
+
+                <input type="password" name="confirma" id="confirma" placeholder="Confirme a senha">
+
+                    <p>termos e condições</p>
+
+                <input type="checkbox" name="termo" required><label>Eu li e concordo com os termos</label>
+
+                     <br>
+
+                     <br>
+
+                     <input type="submit" id="butao" onclick="return validar()">
+
+                </form>
+
+                
+
+            </fieldset>
+
+        </body>
+    </html>
